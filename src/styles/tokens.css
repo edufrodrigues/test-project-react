@@ -1,0 +1,123 @@
+/*
+ * Design tokens do Rota.
+ * Todos os componentes consomem estas variáveis, nunca valores soltos.
+ * O tema escuro sobrescreve apenas as cores em [data-theme='dark'].
+ */
+:root {
+  /* Cores: base */
+  --color-bg: #f6f7f5;
+  --color-surface: #ffffff;
+  --color-surface-muted: #eef1ee;
+  --color-border: #dde2de;
+  --color-border-strong: #c3cbc5;
+  --color-text: #17201d;
+  --color-text-muted: #5b6863;
+  --color-text-subtle: #84908b;
+
+  /* Cores: marca */
+  --color-primary: #0d7a6f;
+  --color-primary-hover: #0a6359;
+  --color-primary-soft: #dcf1ed;
+  --color-on-primary: #ffffff;
+  --color-accent: #ff8a65;
+  --color-accent-soft: #ffe8df;
+
+  /* Cores: feedback */
+  --color-success: #1f8a4c;
+  --color-success-soft: #ddf3e5;
+  --color-warning: #a86400;
+  --color-warning-soft: #fdf0d9;
+  --color-danger: #c4352b;
+  --color-danger-hover: #a52a21;
+  --color-danger-soft: #fbe3e0;
+  --color-info: #2f62c4;
+  --color-info-soft: #e1eafb;
+
+  --color-overlay: rgb(10 18 15 / 0.48);
+  --color-focus-ring: rgb(13 122 111 / 0.35);
+
+  /* Tipografia */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+
+  /* Espaçamento (escala de 4px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Raios */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgb(16 24 20 / 0.06);
+  --shadow-md: 0 4px 12px rgb(16 24 20 / 0.08);
+  --shadow-lg: 0 16px 40px rgb(16 24 20 / 0.16);
+
+  /* Movimento */
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Layout */
+  --container-width: 1160px;
+  --header-height: 64px;
+}
+
+[data-theme='dark'] {
+  --color-bg: #0f1513;
+  --color-surface: #171f1c;
+  --color-surface-muted: #1f2925;
+  --color-border: #2a3531;
+  --color-border-strong: #3a4842;
+  --color-text: #eaf0ed;
+  --color-text-muted: #a3b0aa;
+  --color-text-subtle: #75837d;
+
+  --color-primary: #3cc9b7;
+  --color-primary-hover: #63d8c8;
+  --color-primary-soft: #133a35;
+  --color-on-primary: #08201c;
+  --color-accent: #ff9c7a;
+  --color-accent-soft: #3d2219;
+
+  --color-success: #4cc581;
+  --color-success-soft: #14301f;
+  --color-warning: #f0b44c;
+  --color-warning-soft: #33270f;
+  --color-danger: #f0776c;
+  --color-danger-hover: #f5978e;
+  --color-danger-soft: #3a1815;
+  --color-info: #7aa3f0;
+  --color-info-soft: #18253d;
+
+  --color-overlay: rgb(0 0 0 / 0.6);
+  --color-focus-ring: rgb(60 201 183 / 0.4);
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.35);
+  --shadow-lg: 0 16px 40px rgb(0 0 0 / 0.5);
+}

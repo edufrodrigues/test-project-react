@@ -1,0 +1,43 @@
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+}
+
+.iconWrap {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+}
+
+.empty .iconWrap {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.error .iconWrap {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.title {
+  font-size: var(--text-xl);
+}
+
+.description {
+  max-width: 420px;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}

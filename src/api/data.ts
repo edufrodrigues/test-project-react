@@ -1,0 +1,228 @@
+import { addDays, toISODate, today } from '../lib/date'
+import type { Booking, Experience, Profile } from './types'
+
+/** Gera datas futuras a partir de hoje, para os dados nunca ficarem vencidos. */
+function nextDates(offsets: number[]): string[] {
+  const base = today()
+  return offsets.map((offset) => toISODate(addDays(base, offset)))
+}
+
+export const experiences: Experience[] = [
+  {
+    id: 'mergulho-baia-do-sancho',
+    title: 'Mergulho guiado na Baía do Sancho',
+    city: 'Fernando de Noronha',
+    state: 'PE',
+    category: 'natureza',
+    summary: 'Snorkel com tartarugas e peixes coloridos em águas cristalinas.',
+    description:
+      'Uma manhã inteira explorando uma das praias mais bonitas do mundo. Com um guia credenciado, você nada entre corais, cardumes e, com sorte, tartarugas-verdes. A atividade é tranquila e indicada para quem sabe nadar, mesmo sem experiência em mergulho.',
+    price: 489,
+    rating: 4.9,
+    reviewsCount: 312,
+    durationHours: 4,
+    maxGuests: 6,
+    meetingPoint: 'Mirante do Sancho, entrada do Parque Nacional',
+    highlights: ['Guia de mergulho credenciado', 'Grupos de até 6 pessoas', 'Fotos subaquáticas incluídas'],
+    includes: ['Máscara, snorkel e nadadeiras', 'Colete de flutuação', 'Água e frutas'],
+    availableDates: nextDates([3, 5, 8, 12, 15, 19]),
+    art: { scene: 'mar', skyTop: '#7dd3fc', skyBottom: '#e0f7ff', far: '#38bdf8', near: '#0e7490', sun: '#fde68a' },
+  },
+  {
+    id: 'trilha-pai-inacio',
+    title: 'Trilha ao Morro do Pai Inácio no pôr do sol',
+    city: 'Lençóis',
+    state: 'BA',
+    category: 'aventura',
+    summary: 'Subida curta com a vista mais famosa da Chapada Diamantina.',
+    description:
+      'Uma trilha de dificuldade moderada até o topo do Morro do Pai Inácio, a mais de 1.100 metros de altitude. Lá de cima, o pôr do sol ilumina os paredões e vales da Chapada. Na volta, paramos em um poço para um banho rápido, se o tempo permitir.',
+    price: 189,
+    rating: 4.8,
+    reviewsCount: 527,
+    durationHours: 5,
+    maxGuests: 10,
+    meetingPoint: 'Praça do Coreto, centro de Lençóis',
+    highlights: ['Pôr do sol no topo', 'Guia nativo da região', 'Transporte ida e volta'],
+    includes: ['Transporte 4x4', 'Lanche de trilha', 'Seguro aventura'],
+    availableDates: nextDates([2, 4, 6, 9, 11, 16]),
+    art: { scene: 'montanha', skyTop: '#fb923c', skyBottom: '#fde4c8', far: '#c2410c', near: '#7c2d12', sun: '#fef3c7' },
+  },
+  {
+    id: 'saveiro-ilhas-paraty',
+    title: 'Passeio de saveiro pelas ilhas de Paraty',
+    city: 'Paraty',
+    state: 'RJ',
+    category: 'natureza',
+    summary: 'Um dia de barco por praias desertas e ilhas da baía.',
+    description:
+      'Embarque em um saveiro tradicional e navegue pela Baía de Paraty, com paradas para banho em praias de areia branca e na Lagoa Azul. O almoço é servido a bordo, com peixe fresco preparado pela tripulação.',
+    price: 159,
+    rating: 4.7,
+    reviewsCount: 841,
+    durationHours: 6,
+    maxGuests: 12,
+    meetingPoint: 'Cais de Paraty, píer principal',
+    highlights: ['Quatro paradas para banho', 'Almoço a bordo', 'Saída diária'],
+    includes: ['Almoço com peixe do dia', 'Equipamento de snorkel', 'Taxa de embarque'],
+    availableDates: nextDates([1, 2, 3, 7, 10, 14]),
+    art: { scene: 'mar', skyTop: '#a5b4fc', skyBottom: '#eef2ff', far: '#22c55e', near: '#1d4ed8', sun: '#fef9c3' },
+  },
+  {
+    id: 'vinhos-vale-dos-vinhedos',
+    title: 'Degustação de vinhos no Vale dos Vinhedos',
+    city: 'Bento Gonçalves',
+    state: 'RS',
+    category: 'gastronomia',
+    summary: 'Três vinícolas familiares e harmonização com queijos da serra.',
+    description:
+      'Um roteiro por três vinícolas familiares do Vale dos Vinhedos. Em cada parada, um enólogo apresenta o processo de produção e conduz a degustação. O passeio termina com uma tábua de queijos e embutidos produzidos na região.',
+    price: 279,
+    rating: 4.9,
+    reviewsCount: 403,
+    durationHours: 4,
+    maxGuests: 8,
+    meetingPoint: 'Centro de Informações Turísticas do Vale',
+    highlights: ['Três vinícolas', 'Degustação guiada por enólogo', 'Transporte incluído'],
+    includes: ['Nove rótulos para degustar', 'Tábua de queijos', 'Transporte com motorista'],
+    availableDates: nextDates([4, 6, 11, 13, 18, 20]),
+    art: { scene: 'vinhedo', skyTop: '#fcd34d', skyBottom: '#fff7e0', far: '#84cc16', near: '#4d7c0f', sun: '#ffffff' },
+  },
+  {
+    id: 'sabores-ver-o-peso',
+    title: 'Roteiro de sabores no Ver-o-Peso',
+    city: 'Belém',
+    state: 'PA',
+    category: 'gastronomia',
+    summary: 'Açaí, tacacá e frutas amazônicas no maior mercado a céu aberto.',
+    description:
+      'Uma caminhada pelo Mercado Ver-o-Peso com uma cozinheira paraense. Você prova açaí de verdade, tacacá, maniçoba e frutas que só existem na Amazônia, e conhece as histórias de quem trabalha ali há gerações.',
+    price: 139,
+    rating: 4.8,
+    reviewsCount: 268,
+    durationHours: 3,
+    maxGuests: 10,
+    meetingPoint: 'Relógio do Ver-o-Peso',
+    highlights: ['Mais de 10 degustações', 'Guia cozinheira local', 'Grupos pequenos'],
+    includes: ['Todas as degustações', 'Água e sucos', 'Receitas enviadas por e-mail'],
+    availableDates: nextDates([2, 5, 9, 12, 16, 23]),
+    art: { scene: 'cidade', skyTop: '#f9a8d4', skyBottom: '#fff1f7', far: '#db2777', near: '#831843', sun: '#fff7ed' },
+  },
+  {
+    id: 'balao-boituva',
+    title: 'Voo de balão ao amanhecer',
+    city: 'Boituva',
+    state: 'SP',
+    category: 'aventura',
+    summary: 'Uma hora de voo sobre o interior paulista com brinde na chegada.',
+    description:
+      'Decole antes do sol nascer e acompanhe o amanhecer a até 1.000 metros de altura. O voo dura cerca de uma hora e termina com um brinde e café da manhã no ponto de pouso. Os voos dependem das condições do tempo.',
+    price: 899,
+    rating: 4.9,
+    reviewsCount: 190,
+    durationHours: 3,
+    maxGuests: 4,
+    meetingPoint: 'Centro Nacional de Paraquedismo, Boituva',
+    highlights: ['Piloto certificado pela ANAC', 'Certificado de voo', 'Café da manhã'],
+    includes: ['Voo de cerca de 1 hora', 'Brinde com espumante', 'Seguro de voo'],
+    availableDates: nextDates([6, 7, 13, 14, 20, 21]),
+    art: { scene: 'montanha', skyTop: '#c4b5fd', skyBottom: '#fdf2f8', far: '#a78bfa', near: '#5b21b6', sun: '#fb7185' },
+  },
+  {
+    id: 'rafting-jacare-pepira',
+    title: 'Rafting no Rio Jacaré-Pepira',
+    city: 'Brotas',
+    state: 'SP',
+    category: 'aventura',
+    summary: 'Nove quilômetros de corredeiras para quem quer adrenalina.',
+    description:
+      'Um percurso de 9 km com corredeiras de nível 3 no Rio Jacaré-Pepira. Antes de entrar no bote, todos recebem instruções de segurança. Não é preciso experiência, só disposição para remar e se molhar.',
+    price: 229,
+    rating: 4.7,
+    reviewsCount: 655,
+    durationHours: 3,
+    maxGuests: 8,
+    meetingPoint: 'Base de aventura às margens do rio, Brotas',
+    highlights: ['Corredeiras nível 3', 'Instrutores certificados', 'Vídeo da descida'],
+    includes: ['Capacete, colete e remo', 'Transporte até a largada', 'Lanche pós-descida'],
+    availableDates: nextDates([3, 4, 10, 11, 17, 18]),
+    art: { scene: 'mar', skyTop: '#86efac', skyBottom: '#f0fdf4', far: '#16a34a', near: '#0f766e', sun: '#fefce8' },
+  },
+  {
+    id: 'caminhada-ouro-preto',
+    title: 'Caminhada histórica por Ouro Preto',
+    city: 'Ouro Preto',
+    state: 'MG',
+    category: 'cultura',
+    summary: 'Igrejas barrocas, ladeiras de pedra e as histórias do ciclo do ouro.',
+    description:
+      'Um passeio a pé pelo centro histórico de Ouro Preto, patrimônio mundial da UNESCO. O guia, historiador, conta como a cidade se formou no ciclo do ouro e apresenta as obras de Aleijadinho nas igrejas do roteiro.',
+    price: 99,
+    rating: 4.8,
+    reviewsCount: 734,
+    durationHours: 3,
+    maxGuests: 15,
+    meetingPoint: 'Praça Tiradentes, em frente ao Museu da Inconfidência',
+    highlights: ['Guia historiador', 'Duas igrejas barrocas', 'Roteiro a pé'],
+    includes: ['Ingressos das igrejas', 'Mapa ilustrado', 'Café com pão de queijo'],
+    availableDates: nextDates([1, 3, 5, 8, 10, 12]),
+    art: { scene: 'cidade', skyTop: '#fde68a', skyBottom: '#fffbeb', far: '#d97706', near: '#78350f', sun: '#ffffff' },
+  },
+  {
+    id: 'estrelas-jalapao',
+    title: 'Noite de observação de estrelas no Jalapão',
+    city: 'Mateiros',
+    state: 'TO',
+    category: 'natureza',
+    summary: 'Céu sem poluição luminosa, telescópio e jantar no cerrado.',
+    description:
+      'Longe de qualquer cidade, o céu do Jalapão mostra a Via Láctea a olho nu. Um astrônomo conduz a observação com telescópio e apresenta as constelações. Antes, um jantar regional é servido ao redor da fogueira.',
+    price: 349,
+    rating: 4.9,
+    reviewsCount: 121,
+    durationHours: 4,
+    maxGuests: 10,
+    meetingPoint: 'Pousada base em Mateiros',
+    highlights: ['Telescópio profissional', 'Astrônomo guia', 'Jantar regional'],
+    includes: ['Jantar e bebidas', 'Cadeiras e mantas', 'Transporte 4x4'],
+    availableDates: nextDates([5, 9, 12, 19, 26, 30]),
+    art: { scene: 'montanha', skyTop: '#1e1b4b', skyBottom: '#4338ca', far: '#312e81', near: '#0f172a', sun: '#e0e7ff' },
+  },
+]
+
+export const profile: Profile = {
+  name: 'Marina Costa',
+  email: 'marina.costa@exemplo.com',
+  phone: '(11) 98765-4321',
+  city: 'São Paulo, SP',
+  memberSince: '2023',
+}
+
+function seedBooking(experienceId: string, code: string, dayOffset: number, guests: number, status: Booking['status']): Booking {
+  const experience = experiences.find((item) => item.id === experienceId)!
+  return {
+    id: code,
+    experienceId,
+    experienceTitle: experience.title,
+    location: `${experience.city}, ${experience.state}`,
+    art: experience.art,
+    date: toISODate(addDays(today(), dayOffset)),
+    guests,
+    total: experience.price * guests,
+    name: profile.name,
+    email: profile.email,
+    phone: profile.phone,
+    notes: '',
+    status,
+    createdAt: addDays(today(), dayOffset - 20).toISOString(),
+  }
+}
+
+/** Reservas iniciais: uma futura, uma passada e uma cancelada. */
+export function createSeedBookings(): Booking[] {
+  return [
+    seedBooking('saveiro-ilhas-paraty', 'RT-7Q2K', 10, 2, 'confirmada'),
+    seedBooking('caminhada-ouro-preto', 'RT-3MZ8', -45, 3, 'confirmada'),
+    seedBooking('vinhos-vale-dos-vinhedos', 'RT-9HXA', 18, 2, 'cancelada'),
+  ]
+}
